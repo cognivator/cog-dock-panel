@@ -1,0 +1,416 @@
+@import 'ng-dock-panel_theme';
+
+
+// INTERNAL VARS
+
+@dock-resize-handle-dimensions-l1: @dock-resize-handle-size;
+@dock-resize-handle-dimensions-l2: 100%;
+
+@dock-translate-justification-l1: 0;
+@dock-translate-justification-l2: 50%;
+
+@dock-collapse-handle-dimensions-l1: (@dock-collapse-handle-size - (@dock-collapse-handle-margin * 2));
+@dock-collapse-handle-dimensions-l2: (@dock-collapse-handle-size * @dock-collapse-handle-apsect);
+
+[dock] {
+  border-width: @dock-border-width--normal;
+  border-style: @dock-border-style--normal;
+  border-color: @dock-border-color--normal;
+}
+
+.dock-top {
+  margin-bottom: @dock-margin--normal;
+
+  &[dock-resizable] {
+    border-bottom-width: @dock-border-width--resizable;
+
+    .dock-resize-handle {
+      bottom: -@dock-resize-handle-size;
+
+      height: @dock-resize-handle-dimensions-l1;
+      width: @dock-resize-handle-dimensions-l2;
+    }
+  }
+
+  &[dock-collapsible] {
+    border-bottom-width: @dock-border-width--collapsible;
+
+    .dock-collapse-handle {
+
+      bottom: -(@dock-collapse-handle-size - @dock-collapse-handle-margin);
+
+      // dock-collapse-handle-dimensions('top')
+      min-height: 0;
+      height: @dock-collapse-handle-dimensions-l1;
+
+      min-width: @dock-collapse-handle-dimensions-l2;
+      width: auto;
+
+      // DEFAULT PLACEMENT - center
+      //.translate-justification('top', 'center');
+      left: @dock-translate-justification-l2;
+      -webkit-transform: translateX(-(@dock-translate-justification-l2));
+          -ms-transform: translateX(-(@dock-translate-justification-l2));
+              transform: translateX(-(@dock-translate-justification-l2));
+
+      &::before {
+        //.dock-collapse-handle-placement('top', 'center');
+        position: absolute;
+        top: @dock-collapse-handle-margin;
+
+        //.translate-justification('top', 'center');
+        left: @dock-translate-justification-l2;
+        -webkit-transform: translateX(-(@dock-translate-justification-l2));
+            -ms-transform: translateX(-(@dock-translate-justification-l2));
+                transform: translateX(-(@dock-translate-justification-l2));
+      }
+
+      &.dock-collapse-handle--left {
+        // translate-justification('top', 'left');
+        left: @dock-translate-justification-l1;
+        -webkit-transform: translateX(-(@dock-translate-justification-l1));
+            -ms-transform: translateX(-(@dock-translate-justification-l1));
+                transform: translateX(-(@dock-translate-justification-l1));
+
+        &::before {
+          // dock-collapse-handle-placement('top', 'left');
+          position: absolute;
+          top: @dock-collapse-handle-margin;
+
+          // translate-justification('top', 'left');
+          left: @dock-translate-justification-l1;
+          -webkit-transform: translateX(-(@dock-translate-justification-l1));
+              -ms-transform: translateX(-(@dock-translate-justification-l1));
+                  transform: translateX(-(@dock-translate-justification-l1));
+        }
+      }
+
+      &.dock-collapse-handle--right {
+        // translate-justification('top', 'right');
+        right: @dock-translate-justification-l1;
+        -webkit-transform: translateX(-(@dock-translate-justification-l1));
+            -ms-transform: translateX(-(@dock-translate-justification-l1));
+                transform: translateX(-(@dock-translate-justification-l1));
+
+        &::before {
+          // dock-collapse-handle-placement('top', 'right');
+          position: absolute;
+          top: @dock-collapse-handle-margin;
+
+          // translate-justification('top', 'right');
+          right: @dock-translate-justification-l1;
+          -webkit-transform: translateX(-(@dock-translate-justification-l1));
+              -ms-transform: translateX(-(@dock-translate-justification-l1));
+                  transform: translateX(-(@dock-translate-justification-l1));
+        }
+      }
+    }
+  }
+
+  // let resizable be the final word on border color
+  &[dock-resizable] {
+    border-bottom-color: @dock-border-color--resizable;
+  }
+}
+
+.dock-bottom {
+  margin-top: @dock-margin--normal;
+
+  &[dock-resizable] {
+    border-top-width: @dock-border-width--resizable;
+
+    .dock-resize-handle {
+      //.dock-resize-handle-placement('bottom');
+      top: -@dock-resize-handle-size;
+
+      //.dock-resize-handle-dimensions('bottom');
+      height: @dock-resize-handle-dimensions-l1;
+      width: @dock-resize-handle-dimensions-l2;
+    }
+  }
+
+  &[dock-collapsible] {
+    border-top-width: @dock-border-width--collapsible;
+
+    .dock-collapse-handle {
+
+      top: -(@dock-collapse-handle-size - @dock-collapse-handle-margin);
+
+      //.dock-collapse-handle-dimensions('bottom');
+      min-height: 0;
+      height: @dock-collapse-handle-dimensions-l1;
+
+      min-width: @dock-collapse-handle-dimensions-l2;
+      width: auto;
+
+      // DEFAULT PLACEMENT - center
+      //.translate-justification('bottom', 'center');
+      left: @dock-translate-justification-l2;
+      -webkit-transform: translateX(-(@dock-translate-justification-l2));
+          -ms-transform: translateX(-(@dock-translate-justification-l2));
+              transform: translateX(-(@dock-translate-justification-l2));
+
+      &::before {
+        //.dock-collapse-handle-placement('bottom', 'center');
+        position: absolute;
+        bottom: @dock-collapse-handle-margin;
+
+        //.translate-justification('bottom', 'center');
+        left: @dock-translate-justification-l2;
+        -webkit-transform: translateX(-(@dock-translate-justification-l2));
+            -ms-transform: translateX(-(@dock-translate-justification-l2));
+                transform: translateX(-(@dock-translate-justification-l2));
+      }
+
+      &.dock-collapse-handle--left {
+        //.translate-justification('bottom', 'left');
+        left: @dock-translate-justification-l1;
+        -webkit-transform: translateX(@dock-translate-justification-l1);
+            -ms-transform: translateX(@dock-translate-justification-l1);
+                transform: translateX(@dock-translate-justification-l1);
+
+        &::before {
+          //.dock-collapse-handle-placement('bottom', 'left');
+          position: absolute;
+          bottom: @dock-collapse-handle-margin;
+
+          //.translate-justification('bottom', 'left');
+          left: @dock-translate-justification-l1;
+          -webkit-transform: translateX(@dock-translate-justification-l1);
+              -ms-transform: translateX(@dock-translate-justification-l1);
+                  transform: translateX(@dock-translate-justification-l1);
+        }
+      }
+
+      &.dock-collapse-handle--right {
+        //.translate-justification('bottom', 'right');
+        right: @dock-translate-justification-l1;
+        -webkit-transform: translateX(-(@dock-translate-justification-l1));
+            -ms-transform: translateX(-(@dock-translate-justification-l1));
+                transform: translateX(-(@dock-translate-justification-l1));
+
+        &::before {
+          //.dock-collapse-handle-placement('bottom', 'right');
+          position: absolute;
+          bottom: @dock-collapse-handle-margin;
+
+          //.translate-justification('bottom', 'right');
+          right: @dock-translate-justification-l1;
+          -webkit-transform: translateX(-(@dock-translate-justification-l1));
+              -ms-transform: translateX(-(@dock-translate-justification-l1));
+                  transform: translateX(-(@dock-translate-justification-l1));
+        }
+      }
+    }
+  }
+
+  // let resizable be the final word on border color
+  &[dock-resizable] {
+    border-top-color: @dock-border-color--resizable;
+  }
+}
+
+.dock-left {
+  margin-right: @dock-margin--normal;
+
+  &[dock-resizable] {
+    border-right-width: @dock-border-width--resizable;
+
+    .dock-resize-handle {
+      //.dock-resize-handle-placement('left');
+      right: -@dock-resize-handle-size;
+
+      //.dock-resize-handle-dimensions('left');
+      height: @dock-resize-handle-dimensions-l2;
+      width: @dock-resize-handle-dimensions-l1;
+    }
+  }
+
+  &[dock-collapsible] {
+    border-right-width: @dock-border-width--collapsible;
+
+    .dock-collapse-handle {
+
+      right: -(@dock-collapse-handle-size - @dock-collapse-handle-margin);
+
+      //.dock-collapse-handle-dimensions('left');
+      min-height: @dock-collapse-handle-dimensions-l2;
+      height: auto;
+
+      min-width: 0;
+      width: @dock-collapse-handle-dimensions-l1;
+
+      // DEFAULT PLACEMENT - center
+      //.translate-justification('left', 'center');
+      top: @dock-translate-justification-l2;
+      -webkit-transform: translateY(-(@dock-translate-justification-l2));
+          -ms-transform: translateY(-(@dock-translate-justification-l2));
+              transform: translateY(-(@dock-translate-justification-l2));
+
+      &::before {
+        //.dock-collapse-handle-placement('left', 'center');
+        position: absolute;
+        left: @dock-collapse-handle-margin;
+
+        //.translate-justification('left', 'center');
+        top: @dock-translate-justification-l2;
+        -webkit-transform: translateY(-(@dock-translate-justification-l2));
+            -ms-transform: translateY(-(@dock-translate-justification-l2));
+                transform: translateY(-(@dock-translate-justification-l2));
+      }
+
+      &.dock-collapse-handle--left {
+        //.translate-justification('left', 'left');
+        bottom: @dock-translate-justification-l1;
+        -webkit-transform: translateY(-(@dock-translate-justification-l1));
+            -ms-transform: translateY(-(@dock-translate-justification-l1));
+                transform: translateY(-(@dock-translate-justification-l1));
+
+        &::before {
+          //.dock-collapse-handle-placement('left', 'center');
+          position: absolute;
+          left: @dock-collapse-handle-margin;
+
+          //.translate-justification('left', 'left');
+          bottom: @dock-translate-justification-l1;
+          -webkit-transform: translateY(-(@dock-translate-justification-l1));
+              -ms-transform: translateY(-(@dock-translate-justification-l1));
+                  transform: translateY(-(@dock-translate-justification-l1));
+        }
+      }
+
+      &.dock-collapse-handle--right {
+        //.translate-justification('left', 'right');
+        top: @dock-translate-justification-l1;
+        -webkit-transform: translateY(-(@dock-translate-justification-l1));
+            -ms-transform: translateY(-(@dock-translate-justification-l1));
+                transform: translateY(-(@dock-translate-justification-l1));
+
+        &::before {
+          //.dock-collapse-handle-placement('left', 'right');
+          position: absolute;
+          left: @dock-collapse-handle-margin;
+
+          //.translate-justification('left', 'right');
+          top: @dock-translate-justification-l1;
+          -webkit-transform: translateY(-(@dock-translate-justification-l1));
+              -ms-transform: translateY(-(@dock-translate-justification-l1));
+                  transform: translateY(-(@dock-translate-justification-l1));
+        }
+      }
+    }
+  }
+
+  // let resizable be the final word on border color
+  &[dock-resizable] {
+    border-right-color: @dock-border-color--resizable;
+  }
+}
+
+.dock-right {
+  margin-left: @dock-margin--normal;
+
+  &[dock-resizable] {
+    border-left-width: @dock-border-width--resizable;
+
+    .dock-resize-handle {
+      //.dock-resize-handle-placement('right');
+      left: -@dock-resize-handle-size;
+
+      //.dock-resize-handle-dimensions('right');
+      height: @dock-resize-handle-dimensions-l2;
+      width: @dock-resize-handle-dimensions-l1;
+    }
+  }
+
+  &[dock-collapsible] {
+    border-left-width: @dock-border-width--collapsible;
+
+    .dock-collapse-handle {
+
+      left: -(@dock-collapse-handle-size - @dock-collapse-handle-margin);
+
+      //.dock-collapse-handle-dimensions('right');
+      min-height: @dock-collapse-handle-dimensions-l2;
+      height: auto;
+
+      min-width: 0;
+      width: @dock-collapse-handle-dimensions-l1;
+
+      // DEFAULT PLACEMENT - center
+      //.translate-justification('right', 'center');
+      top: @dock-translate-justification-l2;
+      -webkit-transform: translateY(-(@dock-translate-justification-l2));
+          -ms-transform: translateY(-(@dock-translate-justification-l2));
+              transform: translateY(-(@dock-translate-justification-l2));
+
+      &::before {
+        //.dock-collapse-handle-placement('right', 'center');
+        position: absolute;
+        right: @dock-collapse-handle-margin;
+
+        //.translate-justification('right', 'center');
+        top: @dock-translate-justification-l2;
+        -webkit-transform: translateY(-(@dock-translate-justification-l2));
+            -ms-transform: translateY(-(@dock-translate-justification-l2));
+                transform: translateY(-(@dock-translate-justification-l2));
+      }
+
+      &.dock-collapse-handle--left {
+        //.translate-justification('right', 'left');
+        top: @dock-translate-justification-l1;
+        -webkit-transform: translateY(-(@dock-translate-justification-l1));
+            -ms-transform: translateY(-(@dock-translate-justification-l1));
+                transform: translateY(-(@dock-translate-justification-l1));
+
+        &::before {
+          //.dock-collapse-handle-placement('right', 'left');
+          position: absolute;
+          right: @dock-collapse-handle-margin;
+
+          //.translate-justification('right', 'left');
+          top: @dock-translate-justification-l1;
+          -webkit-transform: translateY(-(@dock-translate-justification-l1));
+              -ms-transform: translateY(-(@dock-translate-justification-l1));
+                  transform: translateY(-(@dock-translate-justification-l1));
+        }
+      }
+
+      &.dock-collapse-handle--right {
+        //.translate-justification('right', 'right');
+        bottom: @dock-translate-justification-l1;
+        -webkit-transform: translateY(-(@dock-translate-justification-l1));
+            -ms-transform: translateY(-(@dock-translate-justification-l1));
+                transform: translateY(-(@dock-translate-justification-l1));
+
+        &::before {
+          //.dock-collapse-handle-placement('right', 'right');
+          position: absolute;
+          right: @dock-collapse-handle-margin;
+
+          //.translate-justification('right', 'right');
+          bottom: @dock-translate-justification-l1;
+          -webkit-transform: translateY(-(@dock-translate-justification-l1));
+              -ms-transform: translateY(-(@dock-translate-justification-l1));
+                  transform: translateY(-(@dock-translate-justification-l1));
+        }
+      }
+    }
+  }
+
+  // let resizable be the final word on border color
+  &[dock-resizable] {
+    border-left-color: @dock-border-color--resizable;
+  }
+}
+
+
+.dock-collapse-handle {
+  background-color: @dock-collapse-handle-background-color;
+  cursor: @dock-collapse-handle-cursor;
+
+  &::before {
+    .dock-collapse-handle-image;
+  }
+}
+

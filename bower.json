@@ -1,0 +1,38 @@
+{
+  "name": "ng-dock-panel",
+  "description": "A dockable panel for angular.",
+  "main": "ng-dock-panel.js",
+  "main.scss": "./lib/style/ng-dock-panel.style.scss",
+  "authors": [
+    "cognivator"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "dock",
+    "dock",
+    "panel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cognivator/ng-dock-panel.git"
+  },
+  "homepage": "https://github.com/cognivator/ng-dock-panel",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "sample",
+    "browserslist",
+    "lib/**/*.css",
+    "Gulpfile.js"
+
+  ],
+  "dependencies": [
+    "jquery",
+    "jquery-ui",
+    "angular"
+  ]
+}

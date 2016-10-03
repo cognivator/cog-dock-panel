@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+[dock-collapsible] .dock-collapse-handle {
+  background-color: darkgray;
+}
+
+[dock-collapsible] .dock-collapse-handle::before {
+  color: lightgray;
+}
+
+#top1 {
+  height: 100px;
+}
+
+#top1[dock-resizable] {
+  min-height: 30px;
+  max-height: 30%;
+}
+
+#left2 {
+  width: 25%;
+}
+
+[id='bottom2.1'] {
+  height: 80px;
+}
+
+#top3 {
+  height: 80px;
+}
+
+#bottom4 {
+  height: 100px;
+}
+
+#bottom4[dock-resizable] {
+  min-height: 5em;
+  max-height: 40%;
+}
+
+#right5 {
+  width: 140px;
+  min-width: 100px;
+  max-width: 500px;
+}
+
+#top6 {
+  height: 80px;
+}
+
+[id='bottom7.1'] {
+  height: 90px;
+}
+
+[id='right7.2'] {
+  width: 140px;
+}
+

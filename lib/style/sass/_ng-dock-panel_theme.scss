@@ -1,0 +1,33 @@
+// PALETTE
+
+// Measurements
+$dock-margin--normal: 5px !default;
+
+$dock-border-width--normal: 1px !default;
+$dock-border-width--resizable: 8px !default;
+$dock-border-width--collapsible: 8px !default;
+
+$dock-resize-handle-size: $dock-border-width--resizable !default;
+
+$dock-collapse-handle-size: $dock-border-width--collapsible !default;
+$dock-collapse-handle-apsect: 7 !default;
+$dock-collapse-handle-margin: 1px !default;
+
+// Style
+$dock-border-style--normal: solid !default;
+
+$dock-border-color--normal: lightgray !default;
+$dock-border-color--resizable: lightblue !default;
+
+$dock-resize-handle-background-color: $dock-border-color--resizable !default;
+
+$dock-collapse-handle-background-color: white !default;
+$dock-collapse-handle-cursor: pointer !default;
+
+@mixin dock-collapse-handle-image() {
+  content: '----';
+  font-size: 16px;
+  font-weight: bold;
+  line-height: ($dock-collapse-handle-size - ($dock-collapse-handle-margin * 2));
+  color: gray;
+}

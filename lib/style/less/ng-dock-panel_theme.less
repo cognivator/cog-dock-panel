@@ -1,0 +1,33 @@
+// PALETTE
+
+// Measurements
+@dock-margin--normal: 5px;
+
+@dock-border-width--normal: 1px;
+@dock-border-width--resizable: 8px;
+@dock-border-width--collapsible: 8px;
+
+@dock-resize-handle-size: @dock-border-width--resizable;
+
+@dock-collapse-handle-size: @dock-border-width--collapsible;
+@dock-collapse-handle-apsect: 7;
+@dock-collapse-handle-margin: 1px;
+
+// Style
+@dock-border-style--normal: solid;
+
+@dock-border-color--normal: lightgray;
+@dock-border-color--resizable: lightblue;
+
+@dock-resize-handle-background-color: @dock-border-color--resizable;
+
+@dock-collapse-handle-background-color: white;
+@dock-collapse-handle-cursor: pointer;
+
+.dock-collapse-handle-image() {
+  content: '----';
+  font-size: 16px;
+  font-weight: bold;
+  line-height: (@dock-collapse-handle-size - (@dock-collapse-handle-margin * 2));
+  color: gray;
+}
