@@ -1,8 +1,8 @@
-#ng-dock-panel
+#cog-dock-panel
 
 Angular module for dockable panels
 
-_Forked from dardino/ngDock in order to add ng-show/hide and collapsible panel support._
+_Inspired by dardino/ngDock._
 
 ##Usage:
 
@@ -113,11 +113,11 @@ You can use both `dock-collapsible` and `dock-resizable` on the same dock, if de
 
 ##Styling
 
-Because ng-dock-panel components are composed of normal HTML elements, you can style them as necessary using a combination of the jquery-ui classes, ng-dock-panel classes and attributes, plus your own custom classes.
+Because cog-dock-panel components are composed of normal HTML elements, you can style them as necessary using a combination of the jquery-ui classes, cog-dock-panel classes and attributes, plus your own custom classes.
 
 ### Style distribution (CSS)
 The compiled styles are distributed in the root of the package, as
-`ng-dock-panel.css` (or `.min.css`).
+`cog-dock-panel.css` (or `.min.css`).
 
 ### Style source (SASS / LESS)
 The style source is available as either SCSS or LESS format, in

@@ -2,14 +2,14 @@
 <html ng-app="testdock">
 
 <head>
-  <link rel="stylesheet" href="../ng-dock-panel.style.min.css"/>
+  <link rel="stylesheet" href="../cog-dock-panel.min.css"/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-  <script src="../ng-dock-panel.min.js"></script>
+  <script src="../cog-dock-panel.min.js"></script>
   <script src="script.js"></script>
 
 </head>
@@ -18,7 +18,7 @@
 <div id="top1" dock="top" dock-resizable ng-show="isBarVisible[0]">1. dock top (min-height 30px, max-height 30%)</div>
 <div id="left2" dock-resizable dock="div2.dock" dock-panel ng-show="isBarVisible[1]">2. dock left
   <button ng-click="toggleLeftRight()">Toggle Left Right</button>
-  <div id="bottom2.1" dock="bottom" dock-resizable="{minHeight: 50}" ng-show="isBarVisible[2]">2.1. dock bottom on left (minHeight 50px)
+  <div id="bottom2.1" dock="bottom" dock-resizable ng-show="isBarVisible[2]">2.1. dock bottom on left
   </div>
 </div>
 <div id="top3" dock="top" dock-collapsible ng-show="isBarVisible[3]">3. another dock top

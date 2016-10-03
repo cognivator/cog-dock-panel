@@ -1,5 +1,5 @@
 {
-  "name": "ng-dock-panel",
+  "name": "cog-dock-panel",
   "version": "1.0.0",
   "description": "A dockable panel for angular.",
   "keywords": [
@@ -7,8 +7,8 @@
     "dock",
     "dock panel"
   ],
-  "repository": "cognivator/ng-dock-panel",
-  "main": "ng-dock-panel.js",
+  "repository": "cognivator/cog-dock-panel",
+  "main": "cog-dock-panel.js",
   "scripts": {
     "install": "gulp",
     "test": "No test configured."

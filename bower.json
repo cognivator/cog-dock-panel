@@ -1,8 +1,8 @@
 {
-  "name": "ng-dock-panel",
+  "name": "cog-dock-panel",
   "description": "A dockable panel for angular.",
-  "main": "ng-dock-panel.js",
-  "main.scss": "./lib/style/ng-dock-panel.style.scss",
+  "main": "cog-dock-panel.js",
+  "main.scss": "./lib/style/cog-dock-panel.style.scss",
   "authors": [
     "cognivator"
   ],
@@ -15,9 +15,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/cognivator/ng-dock-panel.git"
+    "url": "git://github.com/cognivator/cog-dock-panel.git"
   },
-  "homepage": "https://github.com/cognivator/ng-dock-panel",
+  "homepage": "https://github.com/cognivator/cog-dock-panel",
   "ignore": [
     "**/.*",
     "node_modules",

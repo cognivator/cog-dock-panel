@@ -156,8 +156,8 @@
 
   gulp.task('clean-root', function (done) {
     var delPaths = [
-      path.join(paths.root, 'ng-dock-panel*.js'),
-      path.join(paths.root, 'ng-dock-panel*.css')
+      path.join(paths.root, 'cog-dock-panel*.js'),
+      path.join(paths.root, 'cog-dock-panel*.css')
     ];
     clean(delPaths, done);
   });
@@ -226,7 +226,7 @@
     pump([
       gulp.src([path.join(paths.libroot, globs.modules), path.join(paths.libroot, globs.js)]),
       $G.plumber(),
-      $G.concat('ng-dock-panel.js'),
+      $G.concat('cog-dock-panel.js'),
       $G.flatten(),
       gulp.dest(paths.root),
       $G.uglify(),
