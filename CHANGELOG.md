@@ -1,3 +1,13 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/cognivator/cog-dock-panel/compare/1.0.1...v1.0.2) (2016-10-08)
+
+
+### Bug Fixes
+
+* **bower:** correct bower dependencies ([fc5603f](https://github.com/cognivator/cog-dock-panel/commit/fc5603f))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/cognivator/cog-dock-panel/compare/1.0.0...v1.0.1) (2016-10-08)
 
