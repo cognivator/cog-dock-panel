@@ -1,33 +1,33 @@
 // PALETTE
 
 // Measurements
-@dock-margin--normal: 5px;
+@cog-dock-margin--normal: 5px;
 
-@dock-border-width--normal: 1px;
-@dock-border-width--resizable: 8px;
-@dock-border-width--collapsible: 8px;
+@cog-dock-border-width--normal: 1px;
+@cog-dock-border-width--resizable: 8px;
+@cog-dock-border-width--collapsible: 8px;
 
-@dock-resize-handle-size: @dock-border-width--resizable;
+@cog-dock-resize-handle-size: @cog-dock-border-width--resizable;
 
-@dock-collapse-handle-size: @dock-border-width--collapsible;
-@dock-collapse-handle-apsect: 7;
-@dock-collapse-handle-margin: 1px;
+@cog-dock-collapse-handle-size: @cog-dock-border-width--collapsible;
+@cog-dock-collapse-handle-apsect: 7;
+@cog-dock-collapse-handle-margin: 1px;
 
 // Style
-@dock-border-style--normal: solid;
+@cog-dock-border-style--normal: solid;
 
-@dock-border-color--normal: lightgray;
-@dock-border-color--resizable: lightblue;
+@cog-dock-border-color--normal: lightgray;
+@cog-dock-border-color--resizable: lightblue;
 
-@dock-resize-handle-background-color: @dock-border-color--resizable;
+@cog-dock-resize-handle-background-color: @cog-dock-border-color--resizable;
 
-@dock-collapse-handle-background-color: white;
-@dock-collapse-handle-cursor: pointer;
+@cog-dock-collapse-handle-background-color: white;
+@cog-dock-collapse-handle-cursor: pointer;
 
-.dock-collapse-handle-image() {
+.cog-dock-collapse-handle-image() {
   content: '----';
   font-size: 16px;
   font-weight: bold;
-  line-height: (@dock-collapse-handle-size - (@dock-collapse-handle-margin * 2));
+  line-height: (@cog-dock-collapse-handle-size - (@cog-dock-collapse-handle-margin * 2));
   color: gray;
 }

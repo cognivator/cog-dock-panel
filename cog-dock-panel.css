@@ -1,28 +1,28 @@
-[dock] {
+[cog-dock] {
   border-width: 1px;
   border-style: solid;
   border-color: lightgray;
 }
 
-.dock-top {
+.cog-dock-top {
   margin-bottom: 5px;
 }
 
-.dock-top[dock-resizable] {
+.cog-dock-top[cog-dock-resizable] {
   border-bottom-width: 8px;
 }
 
-.dock-top[dock-resizable] .dock-resize-handle {
+.cog-dock-top[cog-dock-resizable] .cog-dock-resize-handle {
   bottom: -8px;
   height: 8px;
   width: 100%;
 }
 
-.dock-top[dock-collapsible] {
+.cog-dock-top[cog-dock-collapsible] {
   border-bottom-width: 8px;
 }
 
-.dock-top[dock-collapsible] .dock-collapse-handle {
+.cog-dock-top[cog-dock-collapsible] .cog-dock-collapse-handle {
   bottom: -7px;
   min-height: 0;
   height: 6px;
@@ -34,7 +34,7 @@
   transform: translateX(-50%);
 }
 
-.dock-top[dock-collapsible] .dock-collapse-handle::before {
+.cog-dock-top[cog-dock-collapsible] .cog-dock-collapse-handle::before {
   position: absolute;
   top: 1px;
   left: 50%;
@@ -43,14 +43,14 @@
   transform: translateX(-50%);
 }
 
-.dock-top[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left {
+.cog-dock-top[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left {
   left: 0;
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
-.dock-top[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left::before {
+.cog-dock-top[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left::before {
   position: absolute;
   top: 1px;
   left: 0;
@@ -59,14 +59,14 @@
   transform: translateX(0);
 }
 
-.dock-top[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right {
+.cog-dock-top[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right {
   right: 0;
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
-.dock-top[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right::before {
+.cog-dock-top[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right::before {
   position: absolute;
   top: 1px;
   right: 0;
@@ -75,29 +75,29 @@
   transform: translateX(0);
 }
 
-.dock-top[dock-resizable] {
+.cog-dock-top[cog-dock-resizable] {
   border-bottom-color: lightblue;
 }
 
-.dock-bottom {
+.cog-dock-bottom {
   margin-top: 5px;
 }
 
-.dock-bottom[dock-resizable] {
+.cog-dock-bottom[cog-dock-resizable] {
   border-top-width: 8px;
 }
 
-.dock-bottom[dock-resizable] .dock-resize-handle {
+.cog-dock-bottom[cog-dock-resizable] .cog-dock-resize-handle {
   top: -8px;
   height: 8px;
   width: 100%;
 }
 
-.dock-bottom[dock-collapsible] {
+.cog-dock-bottom[cog-dock-collapsible] {
   border-top-width: 8px;
 }
 
-.dock-bottom[dock-collapsible] .dock-collapse-handle {
+.cog-dock-bottom[cog-dock-collapsible] .cog-dock-collapse-handle {
   top: -7px;
   min-height: 0;
   height: 6px;
@@ -109,7 +109,7 @@
   transform: translateX(-50%);
 }
 
-.dock-bottom[dock-collapsible] .dock-collapse-handle::before {
+.cog-dock-bottom[cog-dock-collapsible] .cog-dock-collapse-handle::before {
   position: absolute;
   bottom: 1px;
   left: 50%;
@@ -118,14 +118,14 @@
   transform: translateX(-50%);
 }
 
-.dock-bottom[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left {
+.cog-dock-bottom[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left {
   left: 0;
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
-.dock-bottom[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left::before {
+.cog-dock-bottom[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left::before {
   position: absolute;
   bottom: 1px;
   left: 0;
@@ -134,14 +134,14 @@
   transform: translateX(0);
 }
 
-.dock-bottom[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right {
+.cog-dock-bottom[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right {
   right: 0;
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
-.dock-bottom[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right::before {
+.cog-dock-bottom[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right::before {
   position: absolute;
   bottom: 1px;
   right: 0;
@@ -150,29 +150,29 @@
   transform: translateX(0);
 }
 
-.dock-bottom[dock-resizable] {
+.cog-dock-bottom[cog-dock-resizable] {
   border-top-color: lightblue;
 }
 
-.dock-left {
+.cog-dock-left {
   margin-right: 5px;
 }
 
-.dock-left[dock-resizable] {
+.cog-dock-left[cog-dock-resizable] {
   border-right-width: 8px;
 }
 
-.dock-left[dock-resizable] .dock-resize-handle {
+.cog-dock-left[cog-dock-resizable] .cog-dock-resize-handle {
   right: -8px;
   height: 100%;
   width: 8px;
 }
 
-.dock-left[dock-collapsible] {
+.cog-dock-left[cog-dock-collapsible] {
   border-right-width: 8px;
 }
 
-.dock-left[dock-collapsible] .dock-collapse-handle {
+.cog-dock-left[cog-dock-collapsible] .cog-dock-collapse-handle {
   right: -7px;
   min-height: 56px;
   height: auto;
@@ -184,7 +184,7 @@
   transform: translateY(-50%);
 }
 
-.dock-left[dock-collapsible] .dock-collapse-handle::before {
+.cog-dock-left[cog-dock-collapsible] .cog-dock-collapse-handle::before {
   position: absolute;
   left: 1px;
   top: 50%;
@@ -193,14 +193,14 @@
   transform: translateY(-50%);
 }
 
-.dock-left[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left {
+.cog-dock-left[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left {
   bottom: 0;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.dock-left[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left::before {
+.cog-dock-left[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left::before {
   position: absolute;
   left: 1px;
   bottom: 0;
@@ -209,14 +209,14 @@
   transform: translateY(0);
 }
 
-.dock-left[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right {
+.cog-dock-left[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right {
   top: 0;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.dock-left[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right::before {
+.cog-dock-left[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right::before {
   position: absolute;
   left: 1px;
   top: 0;
@@ -225,29 +225,29 @@
   transform: translateY(0);
 }
 
-.dock-left[dock-resizable] {
+.cog-dock-left[cog-dock-resizable] {
   border-right-color: lightblue;
 }
 
-.dock-right {
+.cog-dock-right {
   margin-left: 5px;
 }
 
-.dock-right[dock-resizable] {
+.cog-dock-right[cog-dock-resizable] {
   border-left-width: 8px;
 }
 
-.dock-right[dock-resizable] .dock-resize-handle {
+.cog-dock-right[cog-dock-resizable] .cog-dock-resize-handle {
   left: -8px;
   height: 100%;
   width: 8px;
 }
 
-.dock-right[dock-collapsible] {
+.cog-dock-right[cog-dock-collapsible] {
   border-left-width: 8px;
 }
 
-.dock-right[dock-collapsible] .dock-collapse-handle {
+.cog-dock-right[cog-dock-collapsible] .cog-dock-collapse-handle {
   left: -7px;
   min-height: 56px;
   height: auto;
@@ -259,7 +259,7 @@
   transform: translateY(-50%);
 }
 
-.dock-right[dock-collapsible] .dock-collapse-handle::before {
+.cog-dock-right[cog-dock-collapsible] .cog-dock-collapse-handle::before {
   position: absolute;
   right: 1px;
   top: 50%;
@@ -268,14 +268,14 @@
   transform: translateY(-50%);
 }
 
-.dock-right[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left {
+.cog-dock-right[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left {
   top: 0;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.dock-right[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--left::before {
+.cog-dock-right[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--left::before {
   position: absolute;
   right: 1px;
   top: 0;
@@ -284,14 +284,14 @@
   transform: translateY(0);
 }
 
-.dock-right[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right {
+.cog-dock-right[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right {
   bottom: 0;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.dock-right[dock-collapsible] .dock-collapse-handle.dock-collapse-handle--right::before {
+.cog-dock-right[cog-dock-collapsible] .cog-dock-collapse-handle.cog-dock-collapse-handle--right::before {
   position: absolute;
   right: 1px;
   bottom: 0;
@@ -300,16 +300,16 @@
   transform: translateY(0);
 }
 
-.dock-right[dock-resizable] {
+.cog-dock-right[cog-dock-resizable] {
   border-left-color: lightblue;
 }
 
-.dock-collapse-handle {
+.cog-dock-collapse-handle {
   background-color: white;
   cursor: pointer;
 }
 
-.dock-collapse-handle::before {
+.cog-dock-collapse-handle::before {
   content: '----';
   font-size: 16px;
   font-weight: bold;

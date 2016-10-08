@@ -7,11 +7,11 @@ body {
   margin: 0;
 }
 
-[dock-collapsible] .dock-collapse-handle {
+[cog-dock-collapsible] .cog-dock-collapse-handle {
   background-color: darkgray;
 }
 
-[dock-collapsible] .dock-collapse-handle::before {
+[cog-dock-collapsible] .cog-dock-collapse-handle::before {
   color: lightgray;
 }
 
@@ -19,7 +19,7 @@ body {
   height: 100px;
 }
 
-#top1[dock-resizable] {
+#top1[cog-dock-resizable] {
   min-height: 30px;
   max-height: 30%;
 }
@@ -40,7 +40,7 @@ body {
   height: 100px;
 }
 
-#bottom4[dock-resizable] {
+#bottom4[cog-dock-resizable] {
   min-height: 5em;
   max-height: 40%;
 }
@@ -62,4 +62,3 @@ body {
 [id='right7.2'] {
   width: 140px;
 }
-

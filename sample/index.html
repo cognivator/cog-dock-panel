@@ -14,28 +14,28 @@
 
 </head>
 
-<body dock-panel ng-controller="sampleController">
-<div id="top1" dock="top" dock-resizable ng-show="isBarVisible[0]">1. dock top (min-height 30px, max-height 30%)</div>
-<div id="left2" dock-resizable dock="div2.dock" dock-panel ng-show="isBarVisible[1]">2. dock left
+<body cog-dock-panel ng-controller="sampleController">
+<div id="top1" cog-dock="top" cog-dock-resizable ng-show="isBarVisible[0]">1. dock top (min-height 30px, max-height 30%)</div>
+<div id="left2" cog-dock-resizable cog-dock="div2.dock" cog-dock-panel ng-show="isBarVisible[1]">2. dock left
   <button ng-click="toggleLeftRight()">Toggle Left Right</button>
-  <div id="bottom2.1" dock="bottom" dock-resizable ng-show="isBarVisible[2]">2.1. dock bottom on left
+  <div id="bottom2.1" cog-dock="bottom" cog-dock-resizable ng-show="isBarVisible[2]">2.1. dock bottom on left
   </div>
 </div>
-<div id="top3" dock="top" dock-collapsible ng-show="isBarVisible[3]">3. another dock top
-  <div class="dock-collapse-handle" ng-click="vm.toggleCollapse()"></div>
+<div id="top3" cog-dock="top" cog-dock-collapsible ng-show="isBarVisible[3]">3. another dock top
+  <div class="cog-dock-collapse-handle" ng-click="vm.toggleCollapse()"></div>
 </div>
-<div id="bottom4" dock="bottom" dock-resizable dock-collapsible ng-show="isBarVisible[4]">4. dock bottom, collapsible, custom handles (min-height 5em, max-height 40%)
-  <div class="dock-resize-handle"></div>
-  <div class="dock-collapse-handle" ng-click="vm.toggleCollapse()"></div>
+<div id="bottom4" cog-dock="bottom" cog-dock-resizable cog-dock-collapsible ng-show="isBarVisible[4]">4. dock bottom, collapsible, custom handles (min-height 5em, max-height 40%)
+  <div class="cog-dock-resize-handle"></div>
+  <div class="cog-dock-collapse-handle" ng-click="vm.toggleCollapse()"></div>
 </div>
-<div id="right5" dock="right" dock-resizable ng-show="isBarVisible[5]">5. dock right (minWidth 100px, maxWidth 500px)
-  <div class="dock-resize-handle"></div>
+<div id="right5" cog-dock="right" cog-dock-resizable ng-show="isBarVisible[5]">5. dock right (minWidth 100px, maxWidth 500px)
+  <div class="cog-dock-resize-handle"></div>
 </div>
-<div id="top6" dock="top" ng-show="isBarVisible[6]">6. dock top</div>
-<div id="fill7" dock="fill" dock-panel>7. dock fill
-  <div id="bottom7.1" dock="bottom" ng-show="isBarVisible[7]">7.1. dock bottom</div>
-  <div id="right7.2" dock="right" ng-show="isBarVisible[8]">7.2. dock right</div>
-  <div id="fill7.3" dock="fill">
+<div id="top6" cog-dock="top" ng-show="isBarVisible[6]">6. dock top</div>
+<div id="fill7" cog-dock="fill" cog-dock-panel>7. dock fill
+  <div id="bottom7.1" cog-dock="bottom" ng-show="isBarVisible[7]">7.1. dock bottom</div>
+  <div id="right7.2" cog-dock="right" ng-show="isBarVisible[8]">7.2. dock right</div>
+  <div id="fill7.3" cog-dock="fill">
     <br/>7.3. fill
     <p>
       <input type="checkbox" ng-model="isBarVisible[0]"/>1. dock top<br/>

@@ -24,7 +24,8 @@
     root: root,
     libroot: path.join(root, 'lib'),
     styleroot: path.join(root, 'lib', 'style'),
-    stageroot: path.join(root, 'stage')
+    stageroot: path.join(root, 'stage'),
+    sampleroot: path.join(root, 'sample')
   };
 
   var globs = {
@@ -38,6 +39,121 @@
     CHANGELOG: 'CHANGELOG.md'
   };
 
+
+  //// BUILD
+
+  /// Cleaners
+  gulp.task('clean-stage', function (done) {
+    clean(paths.stageroot, done);
+  });
+
+  gulp.task('clean-less', function (done) {
+    clean(path.join(paths.styleroot, 'less'), done);
+  });
+
+  gulp.task('clean-root', function (done) {
+    var delPaths = [
+      path.join(paths.root, 'cog-dock-panel*.js'),
+      path.join(paths.root, 'cog-dock-panel*.css')
+    ];
+    clean(delPaths, done);
+  });
+
+  /// Styles
+  gulp.task('lint-styles', function (done) {
+    var processors = [
+          // require('postcss-unprefix')  // causes first 'transform:' within a block to disappear
+          require('stylelint'),
+          require('postcss-class-prefix')('dock-', {ignore: [/ng-/, /dock-/, /ui-/]}),
+          require('autoprefixer')
+        ],
+        syntax = require('postcss-scss');
+
+    pump([
+      gulp.src(path.join(paths.styleroot, globs.scss)),
+      $G.plumber(),
+      $G.postcss(processors, {syntax: syntax}),
+      gulp.dest(paths.stageroot)
+    ], done);
+  });
+
+  gulp.task('convert-sass-less', function (done) {
+    var srcOptions = {
+      base: path.join(paths.stageroot, 'sass')
+    };
+
+    pump([
+      gulp.src(path.join(paths.stageroot, 'sass', globs.scss), srcOptions),
+      $G.plumber(),
+      $G.change(scss2less),
+      $G.rename({extname: '.less'}),
+      $G.rename(scssResolveUnderscoreFiles),
+      gulp.dest(path.join(paths.styleroot, 'less'))
+    ], done);
+  });
+
+  gulp.task('publish-styles', function (done) {
+    var processors = [
+      require('cssnano')
+    ];
+
+    var sassOptions = {
+      outputStyle: 'expanded'
+    };
+
+
+    pump([
+      gulp.src(path.join(paths.stageroot, 'sass', globs.scss)),
+      $G.plumber(),
+      $G.sass(sassOptions),
+      $G.flatten(),
+      gulp.dest(paths.root),
+      $G.postcss(processors),
+      $G.rename({extname: '.min.css'}),
+      gulp.dest(paths.root)
+    ], done);
+  });
+
+  gulp.task('build-styles', function (done) {
+    $G.sequence('lint-styles', ['convert-sass-less', 'publish-styles'], done);
+  });
+
+  /// Modules
+  gulp.task('build-module', function (done) {
+    pump([
+      gulp.src([path.join(paths.libroot, globs.modules), path.join(paths.libroot, globs.js)]),
+      $G.plumber(),
+      $G.concat('cog-dock-panel.js'),
+      $G.flatten(),
+      gulp.dest(paths.root),
+      $G.uglify(),
+      $G.rename({extname: '.min.js'}),
+      gulp.dest(paths.root)
+    ], done);
+  });
+
+  /// EntryPoint - BUILD
+  gulp.task('build', ['build-styles', 'build-module', 'build-sample'], function (done) {
+    done();
+  });
+
+
+
+  //// TEST
+  /// Samples
+  gulp.task('build-sample', function (done) {
+    var sassOptions = {
+      outputStyle: 'expanded'
+    };
+
+    pump([
+      gulp.src(path.join(paths.sampleroot, globs.scss)),
+      $G.plumber(),
+      $G.sass(sassOptions),
+      $G.flatten(),
+      gulp.dest(paths.sampleroot)
+    ], done);
+  });
 
   //// RELEASE
 
@@ -140,104 +256,6 @@
           }
           done(error);
         });
-  });
-
-
-  //// BUILD
-
-  /// Cleaners
-  gulp.task('clean-stage', function (done) {
-    clean(paths.stageroot, done);
-  });
-
-  gulp.task('clean-less', function (done) {
-    clean(path.join(paths.styleroot, 'less'), done);
-  });
-
-  gulp.task('clean-root', function (done) {
-    var delPaths = [
-      path.join(paths.root, 'cog-dock-panel*.js'),
-      path.join(paths.root, 'cog-dock-panel*.css')
-    ];
-    clean(delPaths, done);
-  });
-
-  /// Styles
-  gulp.task('lint-styles', function (done) {
-    var processors = [
-          // require('postcss-unprefix')  // causes first 'transform:' within a block to disappear
-          require('stylelint'),
-          require('postcss-class-prefix')('dock-', {ignore: [/ng-/, /dock-/, /ui-/]}),
-          require('autoprefixer')
-        ],
-        syntax = require('postcss-scss');
-
-    pump([
-      gulp.src(path.join(paths.styleroot, globs.scss)),
-      $G.plumber(),
-      $G.postcss(processors, {syntax: syntax}),
-      gulp.dest(paths.stageroot)
-    ], done);
-  });
-
-  gulp.task('convert-sass-less', function (done) {
-    var srcOptions = {
-      base: path.join(paths.stageroot, 'sass')
-    };
-
-    pump([
-      gulp.src(path.join(paths.stageroot, 'sass', globs.scss), srcOptions),
-      $G.plumber(),
-      $G.change(scss2less),
-      $G.rename({extname: '.less'}),
-      $G.rename(scssResolveUnderscoreFiles),
-      gulp.dest(path.join(paths.styleroot, 'less'))
-    ], done);
-  });
-
-  gulp.task('publish-styles', function (done) {
-    var processors = [
-      require('cssnano')
-    ];
-
-    var sassOptions = {
-      outputStyle: 'expanded'
-    };
-
-
-    pump([
-      gulp.src(path.join(paths.stageroot, 'sass', globs.scss)),
-      $G.plumber(),
-      $G.sass(sassOptions),
-      $G.flatten(),
-      gulp.dest(paths.root),
-      $G.postcss(processors),
-      $G.rename({extname: '.min.css'}),
-      gulp.dest(paths.root)
-    ], done);
-  });
-
-  gulp.task('build-styles', function (done) {
-    $G.sequence('lint-styles', ['convert-sass-less', 'publish-styles'], done);
-  });
-
-  /// Modules
-  gulp.task('build-module', function (done) {
-    pump([
-      gulp.src([path.join(paths.libroot, globs.modules), path.join(paths.libroot, globs.js)]),
-      $G.plumber(),
-      $G.concat('cog-dock-panel.js'),
-      $G.flatten(),
-      gulp.dest(paths.root),
-      $G.uglify(),
-      $G.rename({extname: '.min.js'}),
-      gulp.dest(paths.root)
-    ], done);
-  });
-
-  /// EntryPoint - BUILD
-  gulp.task('build', ['build-styles', 'build-module'], function (done) {
-    done();
   });
 
 

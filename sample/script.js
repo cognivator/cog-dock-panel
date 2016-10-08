@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 // Sample script to obtain dynamic dock
-  var dockapp = angular.module('testdock', ['ngDockPanel']);
+  var dockapp = angular.module('testdock', ['cogDockPanel']);
 
   dockapp.controller('sampleController', function ($scope) {
     $scope.div2 = {

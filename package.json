@@ -10,13 +10,10 @@
   "repository": "cognivator/cog-dock-panel",
   "main": "cog-dock-panel.js",
   "scripts": {
-    "install": "gulp",
+    "prepublish": "gulp",
     "test": "No test configured."
   },
   "author": "cognivator <slhenty@cognivator.com>",
-  "contributors": [
-    "gabriele dardino"
-  ],
   "license": "MIT",
   "peerDependencies": {},
   "devDependencies": {
