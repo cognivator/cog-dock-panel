@@ -1,5 +1,7 @@
 #cog-dock-panel
 
+>NOTE: This is a breaking change from [ng-dock-panel](https://github.com/cognivator/ng-dock-panel) .
+
 Angular module for dockable panels
 
 _Inspired by dardino/ngDock._
