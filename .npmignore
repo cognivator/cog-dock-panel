@@ -12,8 +12,9 @@
 
 ### Project
 **/.*
-sample/
 .stylelintrc*
 browserslist
 lib/**/*.css
+lib/cog-dock-panel
+util/
 Gulpfile.js
