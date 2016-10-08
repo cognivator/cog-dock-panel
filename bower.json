@@ -19,20 +19,22 @@
   },
   "homepage": "https://github.com/cognivator/cog-dock-panel",
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
+    "**/.*",
+    "Gulpfile.js",
+    "gulpfile.js",
     "test",
     "tests",
-    "sample",
+    ".stylelintrc*",
     "browserslist",
     "lib/**/*.css",
-    "Gulpfile.js"
-
+    "lib/cog-dock-panel",
+    "util"
   ],
-  "dependencies": [
-    "jquery",
-    "jquery-ui",
-    "angular"
-  ]
+  "dependencies": {
+    "jquery": "^3.x",
+    "jquery-ui": "^1.x",
+    "angular": "^1.5.x"
+  }
 }
